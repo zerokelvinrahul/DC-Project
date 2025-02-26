@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Museums</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0cbe8b;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 150px;
+    }
+
+    header .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 250px;
+      background: #2c3e50;
+      color: white;
+      height: 100vh;
+      transition: width 0.3s;
+      overflow: hidden;
+      position: fixed;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    /* Collapsible Sidebar */
+    .collapsed {
+      width: 60px;
+    }
+
+    .collapsed li span {
+      display: none;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: -35px;
+      background: #34495e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 260px;
+      flex-grow: 1;
+      padding: 20px;
+    }
+
+    .main-content h1 {
+      color: #f39c12;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card h3 {
+      margin: 10px;
+    }
+
+    .card a {
+      display: block;
+      margin: 10px;
+      text-decoration: none;
+      color: #3498db;
+    }
+
+    footer {
+      clear: both;
+      background-color: #f39c12;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <img src="logo.png" alt="Logo">
+    <span class="title">IIT J Museum</span>
+  </div>
+  <nav>
+    <a href="#">Tangible</a>
+    <a href="#">Intangible</a>
+    <a href="#">Knowledge Resources</a>
+  </nav>
+</header>
+
+<div class="container">
+  
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <ul>
+      <li><a href="#"><span class="icon">🛡️</span> <span>Integrity Pledge</span></a></li>
+      <li><a href="#"><span class="icon">📢</span> <span>Vigilance Awareness Week</span></a></li>
+      <li><a href="#"><span class="icon">🎉</span> <span>Azadi Ka Amrit Mahotsav</span></a></li>
+      <li><a href="#"><span class="icon">♿</span> <span>Accessibility Guidelines</span></a></li>
+      <li><a href="#"><span class="icon">📜</span> <span>E-Gazette Portal</span></a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    
+    <h1>Virtual Museums</h1>
+
+    <div class="grid-container">
+      
+        <!-- Museum Card -->
+        <div class="card">
+          <img src="museum1.jpg" alt="Allahabad Museum">
+          <h3>Ravanhatta</h3>
+          <a href="#">3D</a>
+        </div>
+
+        <!-- Museum Card -->
+        <div class="card">
+          <img src="museum2.jpg" alt="National Museum">
+          <h3>National Museum, New Delhi</h3>
+          <a href="#">Exhibitions</a> | 
+          <a href="#">Gallery</a>
+        </div>
+
+        <!-- Museum Card -->
+        <div class="card">
+          <img src="museum3.jpg" alt="Salar Jung Museum">
+          <h3>Salar Jung Museum, Hyderabad</h3>
+          <a href="#">Exhibitions</a> | 
+          <a href="#">Gallery</a>
+        </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  © IIT J Museum
+</footer>
+
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("collapsed");
+  }
+</script>
+
+</body>
+</html>
