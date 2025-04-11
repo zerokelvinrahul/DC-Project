@@ -221,7 +221,7 @@ if (contactForm) {
         
         // Here you would normally send the data to a server
         // For demo purposes, we'll just show an alert
-        alert(`Thank you, ${name}! Your message has been submitted. We'll contact you soon.`);
+        alert(`Thank you, ${name}! Your message has been submitted.`);
         
         // Reset the form
         contactForm.reset();
@@ -237,7 +237,7 @@ if (newsletterForm) {
         const email = this.querySelector('input[type="email"]').value;
         
         // Here you would normally send the email to a server
-        alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
+        alert(`Thank you for subscribing with ${email}!`);
         
         // Reset the form
         this.reset();
